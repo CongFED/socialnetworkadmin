@@ -11,7 +11,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { EmailRegis, tokenState } from "../../recoil/initState";
 import API from "../../services/API";
 import { login } from "../../redux/features/login/loginAPI";
-import { fetchInfo } from "../../redux/features/info/infoSlice";
 import { useAppDispatch } from "../../hook/hook";
 interface YourExistingDataType {
   data: any;

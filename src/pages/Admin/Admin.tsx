@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
+import { useDispatch } from "react-redux";
 import { tokenState } from "../../recoil/initState";
 import { useRecoilValue } from "recoil";
 import { api, setAuthToken } from "../../utils/setAuthToken";
