@@ -122,7 +122,7 @@ const Header = () => {
           </Link>
           {info?.data?.roleName[0] === "Admin" && (
             <Link
-              to="/admin"
+              to="/"
               className={`w-full  h-[50px]  flex justify-start items-center  mb-2 hover:bg-slate-50  px-2 ${
                 isCG
                   ? "border-l-[2px] border-solid border-[#456fe6] bg-slate-50"

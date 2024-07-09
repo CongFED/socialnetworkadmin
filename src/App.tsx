@@ -22,7 +22,6 @@ function App() {
 
     // Kiểm tra kích thước màn hình khi component được render
   }, []);
-  console.log(createRoomR);
   // Hàm kiểm tra kích thước màn hình
 
   return (
@@ -152,7 +151,7 @@ function App() {
                 <Routes>
                   <Route path="/login" element={<Login />} />
                   <Route path="/verifyPinOTP" element={<VerifyCodeOTP />} />
-                  <Route path="/admin" element={<Admin />} />
+                  <Route path="/" element={<Admin />} />
                   <Route path="/forgot-password" element={<ForgotPass />} />
                   <Route path="/verify" element={<VerifyCode />} />
                 </Routes>

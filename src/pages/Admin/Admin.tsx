@@ -31,6 +31,18 @@ interface ResponseData {
   message: string;
 }
 const Admin = () => {
+  const navigate = useNavigate();
+  // const { setUser } = ChatState();
+  const token = localStorage.getItem("token");
+  console.log(token); // Nên trả về giá trị chuỗi hoặc null
+
+  useEffect(() => {
+    if (token === null) {
+      console.log(token);
+      // Kiểm tra nếu hasInfor không tồn tại hoặc có giá trị rỗng
+      navigate("/login");
+    }
+  }, [token]);
   const [dataUser, setDataUser] = useState<ResponseData>({
     data: [],
     success: false,
@@ -132,7 +144,6 @@ const Admin = () => {
     }
   };
   console.log(dataUser);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -152,7 +163,7 @@ const Admin = () => {
       })
       .then((res) => {
         if (res.status === 200) {
-          setDataUser(res.data.data);
+          setDataUser(res.data);
           setLoadUser(true);
         }
       })

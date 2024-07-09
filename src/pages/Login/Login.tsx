@@ -101,7 +101,7 @@ const Login = () => {
       // Ẩn toast
 
       // dispatch(fetchInfo());
-      navigate("/admin");
+      navigate("/");
     }
     if (error == true && isFetching == false) {
       setIsLoading(false);
