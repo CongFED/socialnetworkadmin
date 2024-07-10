@@ -94,14 +94,20 @@ const Login = () => {
   const isFetching = useSelector((state: RootState) => state.user.isFetching);
   useEffect(() => {
     if (currentUser?.data.success === true) {
-      setToken(currentUser?.data?.data?.jwtToken);
-      // localStorage.setItem("token", currentUser?.data?.data?.jwtToken);
-      // localStorage.setItem("hasInfor", currentUser?.data?.data?.hasInfor);
+      console.log(currentUser?.data?.data);
+      if (currentUser?.data?.data?.role[0] === "Admin") {
+        setToken(currentUser?.data?.data?.jwtToken);
+        localStorage.setItem("token", currentUser?.data?.data?.jwtToken);
+        // localStorage.setItem("hasInfor", currentUser?.data?.data?.hasInfor);
 
-      // Ẩn toast
-
-      // dispatch(fetchInfo());
-      navigate("/");
+        // Ẩn toast
+        toast.success("Đăng nhập thành công!");
+        // dispatch(fetchInfo());
+        navigate("/");
+      } else {
+        toast.error("Đăng nhập thất bại!");
+        setIsLoading(false);
+      }
     }
     if (error == true && isFetching == false) {
       setIsLoading(false);
@@ -111,7 +117,6 @@ const Login = () => {
 
   const handleLogin = async () => {
     setIsLoading(true);
-    console.log(email, password1);
     try {
       const data = {
         email: email,

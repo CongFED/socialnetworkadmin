@@ -34,7 +34,7 @@ const Admin = () => {
   const navigate = useNavigate();
   // const { setUser } = ChatState();
   const token = localStorage.getItem("token");
-  console.log(token); // Nên trả về giá trị chuỗi hoặc null
+  // Nên trả về giá trị chuỗi hoặc null
 
   useEffect(() => {
     if (token === null) {
